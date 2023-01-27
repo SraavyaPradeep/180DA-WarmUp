@@ -1,3 +1,4 @@
+# got code from https://realpython.com/python-speech-recognition/#putting-it-all-together-a-guess-the-word-game to test out speech recognition under different settings
 import random
 import time
 
