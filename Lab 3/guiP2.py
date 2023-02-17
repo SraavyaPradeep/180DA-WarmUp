@@ -37,22 +37,22 @@ def on_message(client, userdata, message):
     user = int(input("Choose Rock: 1, Paper: 2, or Scissors: 3 \n"))
     win = ""
     if (user == comp):
-        win = ("Tie")
+        win = 2
     if (user == 1):
         if (comp == 2):
-            win = ("You Wins!")
+            win = 1
         elif (comp == 3):
-            win = ("Player 2 Wins!")
+            win = 0
     elif (user == 2):
         if (comp == 3):
-            win = ("You Wins!")
+            win = 1
         elif (comp == 1):
-            win = ("Player 2 Wins!")
+            win = 0
     elif (user == 3):
         if (comp == 1):
-            win = ("You Wins!")
+            win = 1
         elif (comp == 2):
-            win = ("Player 2 Wins!")
+            win = 0
     else:
         print("Incorrect Input please try again.")
     client.publish("gamep2/test", win, qos=1)
@@ -126,7 +126,7 @@ def change(val, val2, command):
               (val > val2 and val-1 == val2)):
             return 'You Win!'
         else:
-            return 'Computer Wins!'
+            return 'Opponent Wins!'
 sWord = arial.render('Score -> 0', True, color, white)
 sBound = sWord.get_rect()
 
@@ -144,12 +144,13 @@ while running:
                 comp = random.randint(1,3)
                 myChoice = change(inp, 0, 1)
                 compChoice = change(inp, comp, 2)
-                words = arial.render('You chose ' + myChoice, True, color, white)
-                answer = arial.render('Computer chose ' + change(comp, 0, 1) + '.' + compChoice, True, color, white)
-                aBounds = (SCREEN_WIDTH/2, (SCREEN_HEIGHT)*4/5)
-                print('You chose ' + myChoice + ', Computer chose', change(comp, 0, 1) + '.', compChoice)
                 if (compChoice == 'You Win!'):
                     score = score + 1
+                words = arial.render('You chose ' + myChoice, True, color, white)
+                answer = arial.render('Opponent chose ' + change(comp, 0, 1) + '.' + compChoice, True, color, white)
+                aBounds = (SCREEN_WIDTH/2, (SCREEN_HEIGHT)*4/5)
+                print('You chose ' + myChoice + ', Opponent chose', change(comp, 0, 1) + '.', compChoice)
+                
                 sWord = arial.render('Score -> ' + str(score), True, color, white)
         elif event.type == K_UP:
             pass
