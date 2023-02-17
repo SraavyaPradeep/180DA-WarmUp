@@ -9,8 +9,8 @@ void setup()
 void loop()
  {
      Serial.println("Hello, world!");
-//     digitalWrite(ledPin, HIGH);
-//     delay(500);
-//     digitalWrite(ledPin, LOW);
-//     delay(500);
+     digitalWrite(ledPin, HIGH);
+     delay(500);
+     digitalWrite(ledPin, LOW);
+     delay(500);
 }
