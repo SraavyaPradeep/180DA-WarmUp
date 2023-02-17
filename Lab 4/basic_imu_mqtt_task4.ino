@@ -21,8 +21,8 @@ ICM_20948_I2C myICM; // Otherwise create an ICM_20948_I2C object
 #endif
 
 // WiFi
-const char *ssid = "sraavs"; // Enter your WiFi name
-const char *password = "apple123";  // Enter WiFi password
+const char *ssid = ""; // Enter your WiFi name
+const char *password = "";  // Enter WiFi password
 
 // MQTT Broker
 // const char *mqtt_broker = "broker.emqx.io";
